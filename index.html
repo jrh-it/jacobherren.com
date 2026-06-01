@@ -199,6 +199,35 @@
     }
     .cert-chip:hover { border-color: var(--accent); color: var(--accent); }
 
+    /* ── HERO LAYOUT ── */
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 3rem;
+      align-items: center;
+    }
+    .hero-text { display: flex; flex-direction: column; }
+    .hero-photo {
+      flex-shrink: 0;
+    }
+    .hero-photo img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      object-position: center top;
+      border-radius: 50%;
+      border: 2px solid var(--border2);
+      display: block;
+      filter: grayscale(15%);
+      transition: filter 0.3s;
+    }
+    .hero-photo img:hover { filter: grayscale(0%); }
+    @media (max-width: 700px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-photo { order: -1; }
+      .hero-photo img { width: 130px; height: 130px; }
+    }
+
     /* ── ABOUT ── */
     .about-grid {
       display: grid;
@@ -514,15 +543,22 @@
 
   <!-- HERO -->
   <section id="hero" style="max-width:900px;">
-    <p class="hero-eyebrow fade-in fade-in-1">IT Security · Networking · Systems Administration</p>
-    <h1 class="fade-in fade-in-2">Jacob<br /><span>Herren</span></h1>
-    <p class="hero-tagline fade-in fade-in-3">
-      IT Infrastructure and Security professional with 5+ years of experience across manufacturing and MSP environments. Specializing in network security, endpoint management, and ISO 27001 implementation.
-    </p>
-    <p class="hero-location fade-in fade-in-3">// Austin, Texas · Open to opportunities</p>
-    <div class="hero-ctas fade-in fade-in-4">
-      <a href="#experience" class="btn-primary">View Experience</a>
-      <a href="#contact" class="btn-secondary">Get in Touch</a>
+    <div class="hero-inner">
+      <div class="hero-text">
+        <p class="hero-eyebrow fade-in fade-in-1">IT Security · Networking · Systems Administration</p>
+        <h1 class="fade-in fade-in-2">Jacob<br /><span>Herren</span></h1>
+        <p class="hero-tagline fade-in fade-in-3">
+          IT Infrastructure and Security professional with 5+ years of experience across manufacturing and MSP environments. Specializing in network security, endpoint management, and ISO 27001 implementation.
+        </p>
+        <p class="hero-location fade-in fade-in-3">// Austin, Texas · Open to opportunities</p>
+        <div class="hero-ctas fade-in fade-in-4">
+          <a href="#experience" class="btn-primary">View Experience</a>
+          <a href="#contact" class="btn-secondary">Get in Touch</a>
+        </div>
+      </div>
+      <div class="hero-photo fade-in fade-in-3">
+        <img src="headshot.jpg" alt="Jacob Herren" />
+      </div>
     </div>
     <div class="hero-certs fade-in fade-in-5">
       <span class="cert-chip">ISC² SSCP</span>
